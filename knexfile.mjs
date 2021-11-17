@@ -6,7 +6,8 @@ export default {
   test: {
     client: 'pg',
     connection: {
-      connectionString: process.env.TEST_DATABASE_URL,
+      connectionString: process.env.TEST_DATABASE_URL
+        || 'postgresql://example_app_db_test_user:jamesbond@localhost:54320/example_app_test_db',
       ssl: false
     },
     migrations: {
@@ -19,7 +20,8 @@ export default {
   development: {
     client: 'pg',
     connection: {
-      connectionString: process.env.DATABASE_URL,
+      connectionString: process.env.DATABASE_URL
+        || 'postgresql://example_app_db_user:jamesbond@localhost:54320/example_app_db',
       ssl: false
     },
     migrations: {
