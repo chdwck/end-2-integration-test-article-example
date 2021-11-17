@@ -1,0 +1,17 @@
+version: '3.8' # compose file version https://docs.docker.com/compose/compose-file/
+
+services:
+  db:
+    # see https://hub.docker.com/_/postgres/
+    image: 'postgres:14'
+    container_name: example-app-postgresql
+    volumes:
+      # Initalize database with docker volume https://docs.docker.com/storage/volumes/
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+      # Create tunnel for your local machine to connect to docker instance
+      # Example: localhost:54320 -> docker instance:5432
+      - '54320:5432'
+    environment:
+      # required by postgres to create database
+      POSTGRES_PASSWORD: secret
