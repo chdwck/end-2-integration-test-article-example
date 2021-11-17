@@ -10,7 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  ci:
 
     # The OS of the virtual machine / docker container
     # github performs our actions on
@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: ['16.x']
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     services:
@@ -28,7 +28,7 @@ jobs:
           - '54320:5432'
         env:
           POSTGRES_DB: example_app_test_db
-          POSTGRES_PASSWORD: secret
+          POSTGRES_PASSWORD: jamesbond
           POSTGRES_USER: example_app_db_test_user
         options: >-
           --health-cmd pg_isready
