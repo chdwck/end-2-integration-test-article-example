@@ -1,5 +1,4 @@
-# compose file version https://docs.docker.com/compose/compose-file/
-version: '3.8'
+version: '3.8' # compose file version https://docs.docker.com/compose/compose-file/
 
 services:
   db:

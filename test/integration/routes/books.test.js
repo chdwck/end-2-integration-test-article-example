@@ -18,7 +18,7 @@ describe('/books', () => {
     describe('GET /', () => {
         it('returns a list of books', async () => {
             // Arrange
-            await Book.create('Dracula').save();
+            const book = await Book.create('Dracula').save();
 
             // Act
             const response = await supertest(app).get('/books');
