@@ -8,17 +8,11 @@
     "test": "npm run migrate -- --env test && cross-env NODE_ENV=test jest",
     "migrate:make": "knex migrate:make --esm -x js --knexfile ./knexfile.mjs",
     "migrate": "knex migrate:latest --esm --knexfile ./knexfile.mjs",
-    "migrate:up": "knex migrate:up --esm --knexfile ./knexfile.mjs",
-    "migrate:down": "knex migrate:down --esm --knexfile ./knexfile.mjs",
-    "migrate:list": "knex migrate:list --esm --knexfile ./knexfile.mjs",
-    "migrate:back": "knex migrate:rollback --esm --knexfile ./knexfile.mjs",
     "dev": "npm run migrate && node ./index.mjs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/preset-env": "^7.16.4",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "knex": "^0.95.13",
     "pg": "^8.7.1"
@@ -26,6 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
+    "@babel/preset-env": "^7.16.4",
     "babel-jest": "^27.3.1",
     "cross-env": "^7.0.3",
     "jest": "^27.3.1",
