@@ -23,7 +23,7 @@ jobs:
 
     services:
       postgresql:
-        image: 'postgres:12'
+        image: 'postgres:14'
         ports:
           - '54320:5432'
         env:
@@ -50,9 +50,6 @@ jobs:
     
     - name: Install dependencies 👨🏻‍💻
       run: npm ci
-
-    - name: Run migrations
-      run: npm run migrate -- --env test
 
     - name: run end-to-end tests 🧪
       run: npm run test
