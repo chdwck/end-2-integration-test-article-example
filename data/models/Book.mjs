@@ -12,7 +12,7 @@ class Book {
        this.title = title;
     }
 
-    static create(title) {
+    static create({ title }) {
         return new Book({ title });
     }
 
