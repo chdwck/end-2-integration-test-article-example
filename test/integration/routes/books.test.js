@@ -18,7 +18,7 @@ describe('/books', () => {
     describe('GET /', () => {
         it('returns a list of books', async () => {
             // Arrange
-            await Book.create({ title: 'Dracula', authorName: 'Bram Stoker'}).save();
+            await Book.create('Dracula').save();
 
             // Act
             const response = await supertest(app).get('/books');
@@ -34,7 +34,7 @@ describe('/books', () => {
             // Act
             const response = await supertest(app)
                 .post('/books')
-                .send({ title: 'Hyperion', authorName: 'Dan Simmons' })
+                .send({ title: 'Hyperion' })
 
             // Assert
             expect(response.status).toMatchSnapshot();

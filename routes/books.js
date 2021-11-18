@@ -15,8 +15,7 @@ router.get('/', async (req, res) => {
  * Create a book entry
  */
 router.post('/', async (req, res) => {
-    const { title, authorName } = req.body;
-    const newBook = await Book.create({ title, authorName }).save();
+    const newBook = await Book.create(req.body.title).save();
     return res.status(201).json(newBook);
 });
 
