@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "npm run migrate -- --env test && cross-env NODE_ENV=test jest",
-    "migrate:make": "knex migrate:make --esm -x js --knexfile ./knexfile.mjs",
+    "migrate:make": "knex migrate:make --esm -x mjs --knexfile ./knexfile.mjs",
     "migrate": "knex migrate:latest --esm --knexfile ./knexfile.mjs",
     "dev": "npm run migrate && node ./index.mjs"
   },

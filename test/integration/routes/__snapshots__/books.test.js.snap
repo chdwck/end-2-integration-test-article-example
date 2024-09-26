@@ -6,6 +6,7 @@ exports[`/books GET / returns a list of books 2`] = `
 Object {
   "books": Array [
     Object {
+      "authorName": "Bram Stoker",
       "id": 1,
       "title": "Dracula",
     },
@@ -17,6 +18,7 @@ exports[`/books POST / creates a book 1`] = `201`;
 
 exports[`/books POST / creates a book 2`] = `
 Object {
+  "authorName": "Dan Simmons",
   "id": 1,
   "title": "Hyperion",
 }

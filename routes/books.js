@@ -20,7 +20,8 @@ router.get('/', async (req, res) => {
  */
 router.post('/', async (req, res) => {
     try {
-        const newBook = await Book.create(req.body.title).save();
+        const { title, authorName } = req.body;
+        const newBook = await Book.create({ title, authorName }).save();
         return res.status(201).json(newBook);
     } catch (e) {
         return res.status(500).json({ error: e.message });
